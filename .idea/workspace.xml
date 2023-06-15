@@ -7,21 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c090ec0b-12b0-4167-92a0-0fa5807ac82d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asm2vhd4bochs.setting" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/MainApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/ReadLast512Bytes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/cache/Cache.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/constant/SettingConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/constant/VhdFooterFieldConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/entity/Vhd.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/entity/VhdFooterField.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/exception/TodoException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/camio1945/util/StaticMethodUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/cn/camio1945/util/StaticMethodUtilTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="c090ec0b-12b0-4167-92a0-0fa5807ac82d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,6 +70,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "D:/git/asm2vhd4bochs/src/test/java",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -258,7 +245,7 @@
       <option name="presentableId" value="Default" />
       <updated>1686579749067</updated>
       <workItem from="1686579750838" duration="46000" />
-      <workItem from="1686579816105" duration="66085000" />
+      <workItem from="1686579816105" duration="66419000" />
     </task>
     <servers />
   </component>

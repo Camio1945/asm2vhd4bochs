@@ -1,3 +1,0 @@
-[EXECUTABLE]
-asm2vhd4bochs.exe
-
