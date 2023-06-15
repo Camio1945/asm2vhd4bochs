@@ -1,0 +1,7 @@
+-cp
+D:\\git\\asm2vhd4bochs\\target\\asm2vhd4bochs-1.0-SNAPSHOT.jar;C:\\Users\\Administrator\\.m2\\repository\\org\\jetbrains\\annotations\\24.0.1\\annotations-24.0.1.jar;C:\\Users\\Administrator\\.m2\\repository\\cn\\hutool\\hutool-all\\5.8.19\\hutool-all-5.8.19.jar
+--no-fallback
+-H:Path=D:\\git\\asm2vhd4bochs\\target
+-H:Name=asm2vhd4bochs
+-H:Class=cn.camio1945.asm2vhd4bochs.MainApplication
+--no-fallback

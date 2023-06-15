@@ -1,0 +1,10 @@
+cn\camio1945\asm2vhd4bochs\ReadLast512Bytes.class
+cn\camio1945\asm2vhd4bochs\constant\SettingConstant.class
+cn\camio1945\asm2vhd4bochs\entity\VhdFooterField.class
+cn\camio1945\asm2vhd4bochs\constant\VhdFooterFieldConstant$ZeroBasedOrder.class
+cn\camio1945\asm2vhd4bochs\cache\Cache.class
+cn\camio1945\asm2vhd4bochs\constant\VhdFooterFieldConstant.class
+cn\camio1945\asm2vhd4bochs\entity\Vhd.class
+cn\camio1945\asm2vhd4bochs\MainApplication.class
+cn\camio1945\util\StaticMethodUtil.class
+cn\camio1945\asm2vhd4bochs\exception\TodoException.class

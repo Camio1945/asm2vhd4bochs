@@ -1,0 +1,7 @@
+# 关于 setting 文件，见：https://doc.hutool.cn/pages/setting/example/#%E7%AE%80%E4%BB%8B
+# About setting file, see: https://doc.hutool.cn/pages/setting/example/#%E7%AE%80%E4%BB%8B
+
+# nasm.exe 文件的路径
+# the path to the nasm.exe file
+nasmExeFilePath = C:\Program Files\NASM\nasm.exe
+
