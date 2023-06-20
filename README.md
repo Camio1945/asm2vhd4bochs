@@ -35,6 +35,7 @@ Convert an asm file into a vhd file, and then open the vhd file with Bochs.
 1. 只支持 windows 系统。我用的是 windows10 ，其他版本的 windows 没有测试过。
 2. 生成的 vhd 文件的大小为 64kb，其中前 510 字节是可执行的指令，接着两个字节是启动盘第一扇区的标识（0x55, 0xAA），最后 512 字节是 vhd 文件的footer，中间都用 0 填充。
 
+<p>
 
 1. Only support Windows. I'm using windows 10, other systems are not tested.
 2. The size of the generated vhd file is 64kb, of which the first 510 bytes are executable instructions, followed by two bytes of the identifier of the first sector of the boot disk (0x55, 0xAA), and finally the last 512 bytes are the footer of the vhd file, all filled with 0 in the middle.
@@ -46,6 +47,8 @@ Convert an asm file into a vhd file, and then open the vhd file with Bochs.
 项目的入口类是 `cn.camio1945.asm2vhd4bochs.MainApplication` ，主要的功能也集中在这个类里面。
 
 在 release 版本中生成的可执行文件需要在特定的命令提示符中（x64 Native Tools Command Prompt for VS 2019（其他版本也可以；来自Visual Studio软件））进入项目的根目录，然后运行 `mvn -Pnative -DskipTests package` 命令，会在 target 目录下生成 asm2vhd4bochs.exe 文件。
+
+<p>
 
 The Entry class of the project is `cn.camio1945.asm2vhd4bochs.MainApplication`, and the main functions are also concentrated in this class.
 
@@ -59,6 +62,8 @@ The executable file generated in the release version needs to enter the root dir
 
 vhd 文件是一种虚拟硬盘文件(virtual hard disk)，可以用于虚拟机。Bochs 是一种虚拟机，可以用于运行操作系统。Bochs 使用 vhd 文件作为虚拟硬盘文件。
 
+<p>
+
 vhd file is a kind of virtual hard disk file, which can be used for virtual machine. Bochs is a virtual machine that can be used to run operating systems. Bochs uses vhd files as virtual hard disk files.
 
 ***
@@ -66,6 +71,10 @@ vhd file is a kind of virtual hard disk file, which can be used for virtual mach
 ## 2. vhd 文件的结构（The structure of vhd file）
 
 文件的前面用于存储数据，后面的 512 字节用于存储vsd文件的元信息，如：创建者标识、创建时间。
+
+<p>
+
+The front of the file is used to store data, and the last 512 bytes are used to store the metadata of the vsd file, such as: creator identifier, creation time.
 
 [vhd文件格式（vhd file format）](https://download.microsoft.com/download/f/f/e/ffef50a5-07dd-4cf8-aaa3-442c0673a029/Virtual%20Hard%20Disk%20Format%20Spec_10_18_06.doc)
 
@@ -79,13 +88,15 @@ vhd file is a kind of virtual hard disk file, which can be used for virtual mach
 
 原因：bochs 每次启动它会生成一个锁文件(.lock)，如果上次启动的时候没有正常退出，那么这个锁文件就不会被删除，下次启动的时候就会报这个错误。
 
-Reason: Bochs will generate a lock file (.lock) every time it starts. If it does not exit normally last time, the lock file will not be deleted, and this error will be reported when it starts next time.
-
 解决办法：删除 OutputVhd 文件夹下锁文件 (.lock 文件)。
 
-Solution: Delete the lock file (.lock file) in the OutputVhd folder.
-
 注：点击 `Bochs for Windows - Display` 窗口的 `Power` 按钮，可以正常退出 bochs。
+
+<p>
+
+Reason: Bochs will generate a lock file (.lock) every time it starts. If it does not exit normally last time, the lock file will not be deleted, and this error will be reported when it starts next time.
+
+Solution: Delete the lock file (.lock file) in the OutputVhd folder.
 
 FYI: Click the `Power` button in the `Bochs for Windows - Display` window to exit bochs normally.
 
@@ -95,9 +106,11 @@ FYI: Click the `Power` button in the `Bochs for Windows - Display` window to exi
 
 原因：vhd 文件正在被 bochs 进程使用。
 
-Reason: The vhd file is being used by the bochs process.
-
 解决办法：关闭 bochs 进程。
+
+<p>
+
+Reason: The vhd file is being used by the bochs process.
 
 Solution: Close the bochs process.
 
@@ -107,8 +120,10 @@ Solution: Close the bochs process.
 
 原因：汇编源代码有错误。
 
-Reason: There is an error in the assembly source code.
-
 解决办法：修改汇编源代码。
+
+<p>
+
+Reason: There is an error in the assembly source code.
 
 Solution: Modify the assembly source code.
