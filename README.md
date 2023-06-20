@@ -2,127 +2,54 @@
 
 ***
 
-把一个 asm 文件换成 vhd 文件，用于 Bochs 工具。
+把一个 asm 文件换成 vhd 文件，然后用 Bochs 打开这个 vhd 文件。
 
-Convert an asm file to a vhd file for the needs of Bochs.
+Convert an asm file into a vhd file, and then open the vhd file with Bochs.
 
-***
-
-# Target（目标）
-
-我在学习操作系统和汇编，用到了 Bochs 工具。 Bochs 工具用到了 vhd 文件。 vhd 文件最前面是可执行的指令，这些指令来源于 asm 汇编源代码文件。因此我想写一个工具，一步到位把 asm 文件翻译链接成二进制文件，把二进制文件转换成 vhd 文件，然后自动打开 Bochs 运行这个 vhd 文件。
-
-I am learning Operating System and assembly language, using the Bochs tool. Bochs uses vhd files. The vhd file is preceded by executable instructions that originate from the asm assembly source code file. So I want to write a tool that can translate and link asm file into binary file, convert binary file into vhd file and then automatically open Bochs to run this vhd file.
 
 
 ***
 
-# Limitation and dependency（限制与依赖）
+# 用法（Usage）
+
+1. 下载最新的 release 版本
+2. 解压缩
+3. 在 cmd 窗口进入到解压缩的文件夹
+4. 执行命令示例： asm2vhd4bochs.exe asmSourceCodeFilePath="<你的asm源文件绝对路径>" runOrDebug=<你的运行模式>
+   runOrDebug 可以是 run 或者 debug
+   如果你什么参数都不传，直接运行 asm2vhd4bochs.exe ，则默认会打开 NASM 文件夹下的 HelloWorld.asm
+
+
+1. Download the latest release version
+2. Unzip
+3. Enter the unzipped folder in the cmd window
+4. Execute the command example: asm2vhd4bochs.exe asmSourceCodeFilePath="<your asm source file absolute path>" runOrDebug=<your run mode>
+   runOrDebug can be run or debug
+   If you don't pass any parameters and run asm2vhd4bochs.exe directly, it will open HelloWorld.asm under the NASM folder by default
+
+***
+
+# 限制与依赖（Limitation and dependency）
 
 1. 只支持 windows 系统。我用的是 windows10 ，其他版本的 windows 没有测试过。
-2. 依赖 nasm 。[下载地址](https://www.nasm.us/pub/nasm/releasebuilds/2.16.01/win64/)
-3. 依赖 Bochs 。[下载地址](https://sourceforge.net/projects/bochs/files/bochs/)
-4. 生成的 vhd 文件的大小为 64kb，其中前 510 字节是可执行的指令，接着两个字节是启动盘第一扇区的标识（0x55, 0xAA），最后 512 字节是 vhd 文件的footer，中间都用 0 填充。
+2. 生成的 vhd 文件的大小为 64kb，其中前 510 字节是可执行的指令，接着两个字节是启动盘第一扇区的标识（0x55, 0xAA），最后 512 字节是 vhd 文件的footer，中间都用 0 填充。
 
 
 1. Only support Windows. I'm using windows 10, other systems are not tested.
-2. Depends on nasm. [Download link](https://www.nasm.us/pub/nasm/releasebuilds/2.16.01/win64/)
-3. Depends on Bochs. [Download link](https://sourceforge.net/projects/bochs/files/bochs/)
-4. The size of the generated vhd file is 64kb, of which the first 510 bytes are executable instructions, followed by two bytes of the identifier of the first sector of the boot disk (0x55, 0xAA), and finally the last 512 bytes are the footer of the vhd file, all filled with 0 in the middle.
+2. The size of the generated vhd file is 64kb, of which the first 510 bytes are executable instructions, followed by two bytes of the identifier of the first sector of the boot disk (0x55, 0xAA), and finally the last 512 bytes are the footer of the vhd file, all filled with 0 in the middle.
+
 
 ***
 
-# Develop plan（开发计划）
+# 开发（Development）
 
-- [x] 初始化 Maven 项目，引入工具包
-- [x] Initialize a Maven project and import the utility dependencies.
+项目的入口类是 `cn.camio1945.asm2vhd4bochs.MainApplication` ，主要的功能也集中在这个类里面。
 
-<br/>
+在 release 版本中生成的可执行文件需要在特定的命令提示符中（x64 Native Tools Command Prompt for VS 2019（其他版本也可以；来自Visual Studio软件））进入项目的根目录，然后运行 `mvn -Pnative -DskipTests package` 命令，会在 target 目录下生成 asm2vhd4bochs.exe 文件。
 
-- [x] 在以下两种情况下测试获取相对的配置文件路径：Intellij Idea 开发环境、可执行 exe 文件
-- [x] Test getting relative configuration file paths in 2 scenarios: Intellij Idea development environment, executable exe file
+The Entry class of the project is `cn.camio1945.asm2vhd4bochs.MainApplication`, and the main functions are also concentrated in this class.
 
-<br/>
-
-- [ ] 如果 asm2vhd4bochs.setting 配置文件不存在，则从网络上获取（gitee）
-- [ ] If the asm2vhd4bochs.setting configuration file does not exist, get it from the network (gitee)
-
-<br/>
-
-- [x] 测试使用 Java 生成 vhd 文件
-- [x] Test using Java to generate vhd file
-
-<br/>
-
-- [x] 处理命令行参数（或配置文件属性）：nasmExeFilePath（即 nasm.exe 文件的路径）
-- [x] Handle command line parameter (or configuration file property): nasmExeFilePath (i.e. the path to the nasm.exe file)
-
-<br/>
-
-- [x] 处理命令行参数（或配置文件属性）：asmSourceCodeFilePath（即汇编源码文件的路径）
-- [x] Handle command line parameter (or configuration file property): asmSourceCodeFilePath (i.e. the path to the assembly source code file)
-
-<br/>
-
-- [ ] 处理命令行参数（或配置文件属性）：
-- [ ] Handle command line parameter (or configuration file property):
-
-<br/>
-
-- [ ] 处理命令行参数（或配置文件属性）：
-- [ ] Handle command line parameter (or configuration file property):
-
-<br/>
-
-- [ ] 处理命令行参数（或配置文件属性）：
-- [ ] Handle command line parameter (or configuration file property):
-
-<br/>
-
-- [ ] Handle command line parameter (or configuration file property):
-- [ ] 处理命令行参数（或配置文件属性）：
-
-<br/>
-
-- [ ] Handle command line parameter (or configuration file property):
-- [ ] 处理命令行参数（或配置文件属性）：
-
-<br/>
-
-- [ ] Handle command line parameter (or configuration file property):
-- [ ] 处理命令行参数（或配置文件属性）：
-
-<br/>
-
-- [ ] Handle command line parameter (or configuration file property):
-- [ ] 处理命令行参数（或配置文件属性）：
-
-<br/>
-
-- [ ] Handle command line parameter (or configuration file property):
-- [ ] 处理命令行参数（或配置文件属性）：
-
-<br/>
-
-- [ ] Handle command line parameter (or configuration file property):
-- [ ] 处理命令行参数（或配置文件属性）：
-
-<br/>
-
-- [ ] Handle command line parameter (or configuration file property):
-- [ ] 处理命令行参数（或配置文件属性）：
-
-<br/>
-
-- [ ] Handle command line parameter (or configuration file property):
-- [ ] 处理命令行参数（或配置文件属性）：
-
-<br/>
-
-- [ ] Handle command line parameter (or configuration file property):
-- [ ] 处理命令行参数（或配置文件属性）：
-
-  <br/>
+The executable file generated in the release version needs to enter the root directory of the project in a specific command prompt (x64 Native Tools Command Prompt for VS 2019 (other versions are also OK; from Visual Studio software)), and then run the `mvn -Pnative -DskipTests package` command, which will generate the asm2vhd4bochs.exe file in the target directory.
 
 ***
 
@@ -142,4 +69,40 @@ vhd file is a kind of virtual hard disk file, which can be used for virtual mach
 
 [vhd footer](https://github.com/libyal/libvhdi/blob/main/documentation/Virtual%20Hard%20Disk%20(VHD)%20image%20format.asciidoc#2-footer)
 
+***
 
+# 常见错误与解决办法 (Common errors and solutions)
+
+## ata0-0: could not open hard drive image file '***.vhd'
+
+原因：bochs 每次启动它会生成一个锁文件(.lock)，如果上次启动的时候没有正常退出，那么这个锁文件就不会被删除，下次启动的时候就会报这个错误。
+
+Reason: Bochs will generate a lock file (.lock) every time it starts. If it does not exit normally last time, the lock file will not be deleted, and this error will be reported when it starts next time.
+
+解决办法：删除 OutputVhd 文件夹下锁文件 (.lock 文件)。
+
+Solution: Delete the lock file (.lock file) in the OutputVhd folder.
+
+注：点击 `Bochs for Windows - Display` 窗口的 `Power` 按钮，可以正常退出 bochs。
+
+FYI: Click the `Power` button in the `Bochs for Windows - Display` window to exit bochs normally.
+
+## cn.hutool.core.io.IORuntimeException: FileSystemException: ***.vhd: The process cannot access the file because it is being used by another process
+
+原因：vhd 文件正在被 bochs 进程使用。
+
+Reason: The vhd file is being used by the bochs process.
+
+解决办法：关闭 bochs 进程。
+
+Solution: Close the bochs process.
+
+## java.lang.RuntimeException: compile asm source code to bin file failed
+
+原因：汇编源代码有错误。
+
+Reason: There is an error in the assembly source code.
+
+解决办法：修改汇编源代码。
+
+Solution: Modify the assembly source code.

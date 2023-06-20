@@ -97,6 +97,8 @@ local.properties
 node_modules
 npm-debug.log*
 out
+OutputBin/*
+OutputVhd/*
 parts
 pip-log.txt
 rebel.xml

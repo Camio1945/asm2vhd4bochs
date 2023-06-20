@@ -6,7 +6,7 @@
 
   <groupId>com.camio1945</groupId>
   <artifactId>asm2vhd4bochs</artifactId>
-  <version>0.1-SNAPSHOT</version>
+  <version>0.2-SNAPSHOT</version>
 
   <properties>
     <maven.compiler.source>17</maven.compiler.source>

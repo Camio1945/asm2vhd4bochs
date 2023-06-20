@@ -2,12 +2,77 @@
 <project version="4">
   <component name="AnalysisUIOptions">
     <option name="GROUP_BY_SEVERITY" value="true" />
+    <option name="ANALYZE_TEST_SOURCES" value="false" />
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c090ec0b-12b0-4167-92a0-0fa5807ac82d" name="Changes" comment="" />
+    <list default="true" id="c090ec0b-12b0-4167-92a0-0fa5807ac82d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Bochs/BIOS-bochs-latest" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/BIOS-bochs-legacy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/CHANGES.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/COPYING.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/SeaBIOS-README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/SeaVGABIOS-README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/TESTFORM.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/TODO.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/VGABIOS-elpin-2.40" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/VGABIOS-elpin-LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/VGABIOS-lgpl-README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/VGABIOS-lgpl-latest" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/VGABIOS-lgpl-latest-banshee" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/VGABIOS-lgpl-latest-cirrus" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/VGABIOS-lgpl-latest-cirrus-debug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/VGABIOS-lgpl-latest-debug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/bios.bin-1.13.0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/bochs.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/bochsrc-sample.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/bochsrcTemplate.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/keymaps/sdl-pc-de.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/keymaps/sdl-pc-us.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/keymaps/sdl2-pc-de.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/keymaps/sdl2-pc-us.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/keymaps/x11-pc-be.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/keymaps/x11-pc-da.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/keymaps/x11-pc-de.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/keymaps/x11-pc-es.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/keymaps/x11-pc-fr.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/keymaps/x11-pc-it.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/keymaps/x11-pc-ru.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/keymaps/x11-pc-se.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/keymaps/x11-pc-sg.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/keymaps/x11-pc-si.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/keymaps/x11-pc-uk.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/keymaps/x11-pc-us.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/lgban.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/logo.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/penguin.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/sb16ctrl.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/slirp.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/unbochs.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/version-2.7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/vgabios-cirrus.bin-1.13.0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bochs/vnet.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NASM/HelloWorld.asm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NASM/OnePlusOneIsTwo.asm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NASM/version-2.16.01" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cn/camio1945/asm2vhd4bochs/MainApplicationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/MainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/ReadLast512Bytes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/cache/Cache.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/constant/SettingConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/constant/ArgsKeysConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/constant/VhdFooterFieldConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/constant/VhdFooterFieldConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/entity/Vhd.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/exception/TodoException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/camio1945/util/StaticMethodUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/camio1945/util/StaticMethodUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/cn/camio1945/util/StaticMethodUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/camio1945/util/StaticMethodUtilTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +80,9 @@
   </component>
   <component name="CompilerWorkspaceConfiguration">
     <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="CoverageOptionsProvider">
+    <option name="myAddOrReplace" value="1" />
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
@@ -25,11 +93,15 @@
         <option value="Record" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/MainApplication.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="JRebelWorkspace">
     <option name="jrebelEnabledAutocompile" value="true" />
@@ -53,6 +125,9 @@
       </MavenImportingSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2R6oAZibK6bgXfP9NxlbIhmP0TA" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -64,33 +139,45 @@
     <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/git/asm2vhd4bochs/src/test/java",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/git/asm2vhd4bochs/Bochs-2.7&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RebelAgentSelection">
     <selection>jr</selection>
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\git\asm2vhd4bochs\Bochs-2.7" />
+      <recent name="D:\git\asm2vhd4bochs\NASM-2.16.01" />
+      <recent name="D:\git\asm2vhd4bochs" />
       <recent name="D:\git\asm2vhd4bochs\src\test\java" />
       <recent name="D:\git\asm2vhd4bochs\src\main\java\com\camio1945\util" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="cn.camio1945.asm2vhd4bochs" />
+      <recent name="cn.camio1945.util" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="cn.camio1945.asm2vhd4bochs" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.cn.camio1945.asm2vhd4bochs.MainApplication">
+  <component name="RunManager" selected="Application.MainApplication">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -102,21 +189,7 @@
       <Port>5050</Port>
     </configuration>
     <configuration name="MainApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.camio1945.asm2vhd4bochs.MainApplication" />
-      <module name="asm2vhd4bochs" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.camio1945.asm2vhd4bochs.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ReadLast512Bytes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cn.camio1945.asm2vhd4bochs.ReadLast512Bytes" />
+      <option name="MAIN_CLASS_NAME" value="cn.camio1945.asm2vhd4bochs.MainApplication" />
       <module name="asm2vhd4bochs" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -135,8 +208,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="cn.camio1945.asm2vhd4bochs.MainApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cn.camio1945.asm2vhd4bochs.MainApplication" />
+    <configuration name="All in asm2vhd4bochs" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="asm2vhd4bochs" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainApplicationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="asm2vhd4bochs" />
       <extension name="coverage">
         <pattern>
@@ -144,21 +228,28 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="cn.camio1945.asm2vhd4bochs" />
+      <option name="MAIN_CLASS_NAME" value="cn.camio1945.asm2vhd4bochs.MainApplicationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StaticMethodUtilTest.dummyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MainApplicationTest.initStaticFieldsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="asm2vhd4bochs" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cn.camio1945.util.*" />
+          <option name="PATTERN" value="cn.camio1945.asm2vhd4bochs.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="cn.camio1945.util" />
-      <option name="MAIN_CLASS_NAME" value="cn.camio1945.util.StaticMethodUtilTest" />
-      <option name="METHOD_NAME" value="dummyTest" />
+      <option name="PACKAGE_NAME" value="cn.camio1945.asm2vhd4bochs" />
+      <option name="MAIN_CLASS_NAME" value="cn.camio1945.asm2vhd4bochs.MainApplicationTest" />
+      <option name="METHOD_NAME" value="initStaticFieldsTest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
@@ -168,7 +259,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StaticMethodUtilTest.getCurrentExecutingProjectFolderPathTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StaticMethodUtilTest.byteListWithZerosTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="asm2vhd4bochs" />
       <extension name="coverage">
         <pattern>
@@ -178,7 +269,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="cn.camio1945.util" />
       <option name="MAIN_CLASS_NAME" value="cn.camio1945.util.StaticMethodUtilTest" />
-      <option name="METHOD_NAME" value="getCurrentExecutingProjectFolderPathTest" />
+      <option name="METHOD_NAME" value="byteListWithZerosTest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
@@ -220,19 +311,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.cn.camio1945.asm2vhd4bochs.MainApplication" />
       <item itemvalue="Application.MainApplication" />
-      <item itemvalue="Application.ReadLast512Bytes" />
-      <item itemvalue="JUnit.StaticMethodUtilTest.dummyTest" />
-      <item itemvalue="JUnit.StaticMethodUtilTest.getCurrentExecutingProjectFolderPathTest" />
+      <item itemvalue="JUnit.MainApplicationTest.initStaticFieldsTest" />
+      <item itemvalue="JUnit.StaticMethodUtilTest.byteListWithZerosTest" />
+      <item itemvalue="JUnit.All in asm2vhd4bochs" />
+      <item itemvalue="JUnit.MainApplicationTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.cn.camio1945.asm2vhd4bochs.MainApplication" />
-        <item itemvalue="Application.ReadLast512Bytes" />
-        <item itemvalue="JUnit.StaticMethodUtilTest.getCurrentExecutingProjectFolderPathTest" />
-        <item itemvalue="JUnit.StaticMethodUtilTest.dummyTest" />
         <item itemvalue="Application.MainApplication" />
+        <item itemvalue="JUnit.All in asm2vhd4bochs" />
+        <item itemvalue="JUnit.MainApplicationTest.initStaticFieldsTest" />
+        <item itemvalue="JUnit.StaticMethodUtilTest.byteListWithZerosTest" />
+        <item itemvalue="JUnit.MainApplicationTest" />
       </list>
     </recent_temporary>
   </component>
@@ -245,7 +336,8 @@
       <option name="presentableId" value="Default" />
       <updated>1686579749067</updated>
       <workItem from="1686579750838" duration="46000" />
-      <workItem from="1686579816105" duration="66419000" />
+      <workItem from="1686579816105" duration="117087000" />
+      <workItem from="1687226334473" duration="4873000" />
     </task>
     <servers />
   </component>
@@ -256,16 +348,28 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/ReadLast512Bytes.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="2" />
+          <url>file://$PROJECT_DIR$/src/test/java/cn/camio1945/asm2vhd4bochs/MainApplicationTest.java</url>
+          <line>416</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/MainApplication.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="3" />
+          <line>270</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/asm2vhd4bochs$StaticMethodUtilTest_byteListWithZerosTest.ic" NAME="StaticMethodUtilTest.byteListWithZerosTest Coverage Results" MODIFIED="1686964553121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>cn.camio1945.util.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/asm2vhd4bochs$All_in_asm2vhd4bochs.ic" NAME="All in asm2vhd4bochs Coverage Results" MODIFIED="1687227579208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/asm2vhd4bochs$MainApplicationTest.ic" NAME="MainApplicationTest Coverage Results" MODIFIED="1686964447747" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>cn.camio1945.asm2vhd4bochs.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/asm2vhd4bochs$MainApplication.ic" NAME="MainApplication Coverage Results" MODIFIED="1687231064251" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>cn.camio1945.asm2vhd4bochs.*</FILTER>
+    </SUITE>
   </component>
 </project>

@@ -16,6 +16,9 @@ import java.util.List;
  * @author Camio1945
  */
 public class StaticMethodUtil {
+  private StaticMethodUtil() {
+
+  }
 
   /**
    * Get the current executing project folder path (path separator is slash /)
@@ -32,8 +35,7 @@ public class StaticMethodUtil {
 
     String path = currentFile.getAbsolutePath()
                              .replace("\\", "/");
-    String folderPath = path.substring(0, path.lastIndexOf("/"));
-    return folderPath;
+    return path.substring(0, path.lastIndexOf("/"));
   }
 
   @NotNull
@@ -77,7 +79,6 @@ public class StaticMethodUtil {
     for (byte b : bytes) {
       byteList.add(b);
     }
-    Assert.isTrue(byteList.size() == 8);
     return byteList;
   }
 }
