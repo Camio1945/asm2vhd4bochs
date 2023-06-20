@@ -9,69 +9,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c090ec0b-12b0-4167-92a0-0fa5807ac82d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Bochs/BIOS-bochs-latest" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/BIOS-bochs-legacy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/CHANGES.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/COPYING.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/README.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/SeaBIOS-README.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/SeaVGABIOS-README.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/TESTFORM.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/TODO.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/VGABIOS-elpin-2.40" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/VGABIOS-elpin-LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/VGABIOS-lgpl-README.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/VGABIOS-lgpl-latest" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/VGABIOS-lgpl-latest-banshee" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/VGABIOS-lgpl-latest-cirrus" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/VGABIOS-lgpl-latest-cirrus-debug" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/VGABIOS-lgpl-latest-debug" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/bios.bin-1.13.0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/bochs.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/bochsrc-sample.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/bochsrcTemplate.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/keymaps/sdl-pc-de.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/keymaps/sdl-pc-us.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/keymaps/sdl2-pc-de.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/keymaps/sdl2-pc-us.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/keymaps/x11-pc-be.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/keymaps/x11-pc-da.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/keymaps/x11-pc-de.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/keymaps/x11-pc-es.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/keymaps/x11-pc-fr.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/keymaps/x11-pc-it.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/keymaps/x11-pc-ru.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/keymaps/x11-pc-se.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/keymaps/x11-pc-sg.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/keymaps/x11-pc-si.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/keymaps/x11-pc-uk.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/keymaps/x11-pc-us.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/lgban.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/logo.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/penguin.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/sb16ctrl.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/slirp.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/unbochs.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/version-2.7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/vgabios-cirrus.bin-1.13.0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bochs/vnet.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NASM/HelloWorld.asm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NASM/OnePlusOneIsTwo.asm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NASM/version-2.16.01" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/cn/camio1945/asm2vhd4bochs/MainApplicationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/MainApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/ReadLast512Bytes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/cache/Cache.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/constant/SettingConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/constant/ArgsKeysConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/constant/VhdFooterFieldConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/constant/VhdFooterFieldConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/entity/Vhd.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/exception/TodoException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/camio1945/util/StaticMethodUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/camio1945/util/StaticMethodUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/cn/camio1945/util/StaticMethodUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/camio1945/util/StaticMethodUtilTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -337,7 +275,7 @@
       <updated>1686579749067</updated>
       <workItem from="1686579750838" duration="46000" />
       <workItem from="1686579816105" duration="117087000" />
-      <workItem from="1687226334473" duration="4873000" />
+      <workItem from="1687226334473" duration="5157000" />
     </task>
     <servers />
   </component>

@@ -19,6 +19,7 @@ Convert an asm file into a vhd file, and then open the vhd file with Bochs.
    runOrDebug 可以是 run 或者 debug
    如果你什么参数都不传，直接运行 asm2vhd4bochs.exe ，则默认会打开 NASM 文件夹下的 HelloWorld.asm
 
+<p>
 
 1. Download the latest release version
 2. Unzip
@@ -37,7 +38,6 @@ Convert an asm file into a vhd file, and then open the vhd file with Bochs.
 
 1. Only support Windows. I'm using windows 10, other systems are not tested.
 2. The size of the generated vhd file is 64kb, of which the first 510 bytes are executable instructions, followed by two bytes of the identifier of the first sector of the boot disk (0x55, 0xAA), and finally the last 512 bytes are the footer of the vhd file, all filled with 0 in the middle.
-
 
 ***
 
@@ -60,6 +60,8 @@ The executable file generated in the release version needs to enter the root dir
 vhd 文件是一种虚拟硬盘文件(virtual hard disk)，可以用于虚拟机。Bochs 是一种虚拟机，可以用于运行操作系统。Bochs 使用 vhd 文件作为虚拟硬盘文件。
 
 vhd file is a kind of virtual hard disk file, which can be used for virtual machine. Bochs is a virtual machine that can be used to run operating systems. Bochs uses vhd files as virtual hard disk files.
+
+***
 
 ## 2. vhd 文件的结构（The structure of vhd file）
 
@@ -87,6 +89,8 @@ Solution: Delete the lock file (.lock file) in the OutputVhd folder.
 
 FYI: Click the `Power` button in the `Bochs for Windows - Display` window to exit bochs normally.
 
+***
+
 ## cn.hutool.core.io.IORuntimeException: FileSystemException: ***.vhd: The process cannot access the file because it is being used by another process
 
 原因：vhd 文件正在被 bochs 进程使用。
@@ -96,6 +100,8 @@ Reason: The vhd file is being used by the bochs process.
 解决办法：关闭 bochs 进程。
 
 Solution: Close the bochs process.
+
+***
 
 ## java.lang.RuntimeException: compile asm source code to bin file failed
 
