@@ -10,6 +10,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c090ec0b-12b0-4167-92a0-0fa5807ac82d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/MainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/cn/camio1945/asm2vhd4bochs/MainApplicationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/camio1945/asm2vhd4bochs/MainApplicationTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +132,7 @@
     <configuration name="MainApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cn.camio1945.asm2vhd4bochs.MainApplication" />
       <module name="asm2vhd4bochs" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PROGRAM_PARAMETERS" value="-h" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="cn.camio1945.asm2vhd4bochs.*" />
@@ -158,7 +161,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainApplicationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MainApplicationTest.fillDataBytesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="asm2vhd4bochs" />
       <extension name="coverage">
         <pattern>
@@ -168,26 +171,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="cn.camio1945.asm2vhd4bochs" />
       <option name="MAIN_CLASS_NAME" value="cn.camio1945.asm2vhd4bochs.MainApplicationTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainApplicationTest.initStaticFieldsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="asm2vhd4bochs" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cn.camio1945.asm2vhd4bochs.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="cn.camio1945.asm2vhd4bochs" />
-      <option name="MAIN_CLASS_NAME" value="cn.camio1945.asm2vhd4bochs.MainApplicationTest" />
-      <option name="METHOD_NAME" value="initStaticFieldsTest" />
+      <option name="METHOD_NAME" value="fillDataBytesTest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
@@ -197,17 +181,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StaticMethodUtilTest.byteListWithZerosTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MainApplicationTest.mainTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="asm2vhd4bochs" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cn.camio1945.util.*" />
+          <option name="PATTERN" value="cn.camio1945.asm2vhd4bochs.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="cn.camio1945.util" />
-      <option name="MAIN_CLASS_NAME" value="cn.camio1945.util.StaticMethodUtilTest" />
-      <option name="METHOD_NAME" value="byteListWithZerosTest" />
+      <option name="PACKAGE_NAME" value="cn.camio1945.asm2vhd4bochs" />
+      <option name="MAIN_CLASS_NAME" value="cn.camio1945.asm2vhd4bochs.MainApplicationTest" />
+      <option name="METHOD_NAME" value="mainTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainApplicationTest.runOrDebugBochsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="asm2vhd4bochs" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.camio1945.asm2vhd4bochs.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.camio1945.asm2vhd4bochs" />
+      <option name="MAIN_CLASS_NAME" value="cn.camio1945.asm2vhd4bochs.MainApplicationTest" />
+      <option name="METHOD_NAME" value="runOrDebugBochsTest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
@@ -250,18 +254,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.MainApplication" />
-      <item itemvalue="JUnit.MainApplicationTest.initStaticFieldsTest" />
-      <item itemvalue="JUnit.StaticMethodUtilTest.byteListWithZerosTest" />
+      <item itemvalue="JUnit.MainApplicationTest.fillDataBytesTest" />
+      <item itemvalue="JUnit.MainApplicationTest.mainTest" />
+      <item itemvalue="JUnit.MainApplicationTest.runOrDebugBochsTest" />
       <item itemvalue="JUnit.All in asm2vhd4bochs" />
-      <item itemvalue="JUnit.MainApplicationTest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.MainApplication" />
         <item itemvalue="JUnit.All in asm2vhd4bochs" />
-        <item itemvalue="JUnit.MainApplicationTest.initStaticFieldsTest" />
-        <item itemvalue="JUnit.StaticMethodUtilTest.byteListWithZerosTest" />
-        <item itemvalue="JUnit.MainApplicationTest" />
+        <item itemvalue="JUnit.MainApplicationTest.mainTest" />
+        <item itemvalue="JUnit.MainApplicationTest.runOrDebugBochsTest" />
+        <item itemvalue="JUnit.MainApplicationTest.fillDataBytesTest" />
       </list>
     </recent_temporary>
   </component>
@@ -275,7 +279,7 @@
       <updated>1686579749067</updated>
       <workItem from="1686579750838" duration="46000" />
       <workItem from="1686579816105" duration="117087000" />
-      <workItem from="1687226334473" duration="5157000" />
+      <workItem from="1687226334473" duration="13632000" />
     </task>
     <servers />
   </component>
@@ -287,12 +291,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/cn/camio1945/asm2vhd4bochs/MainApplicationTest.java</url>
-          <line>416</line>
+          <line>471</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/MainApplication.java</url>
-          <line>270</line>
+          <line>295</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
@@ -302,11 +306,17 @@
     <SUITE FILE_PATH="coverage/asm2vhd4bochs$StaticMethodUtilTest_byteListWithZerosTest.ic" NAME="StaticMethodUtilTest.byteListWithZerosTest Coverage Results" MODIFIED="1686964553121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>cn.camio1945.util.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/asm2vhd4bochs$All_in_asm2vhd4bochs.ic" NAME="All in asm2vhd4bochs Coverage Results" MODIFIED="1687227579208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/asm2vhd4bochs$All_in_asm2vhd4bochs.ic" NAME="All in asm2vhd4bochs Coverage Results" MODIFIED="1687254023769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/asm2vhd4bochs$MainApplicationTest.ic" NAME="MainApplicationTest Coverage Results" MODIFIED="1686964447747" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>cn.camio1945.asm2vhd4bochs.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/asm2vhd4bochs$MainApplicationTest_needsHelpTest.ic" NAME="MainApplicationTest.needsHelpTest Coverage Results" MODIFIED="1687251546767" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>cn.camio1945.asm2vhd4bochs.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/asm2vhd4bochs$MainApplication.ic" NAME="MainApplication Coverage Results" MODIFIED="1687231064251" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>cn.camio1945.asm2vhd4bochs.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/asm2vhd4bochs$MainApplicationTest_runOrDebugBochsTest.ic" NAME="MainApplicationTest.runOrDebugBochsTest Coverage Results" MODIFIED="1687253616581" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>cn.camio1945.asm2vhd4bochs.*</FILTER>
     </SUITE>
   </component>

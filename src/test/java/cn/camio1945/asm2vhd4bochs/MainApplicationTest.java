@@ -3,6 +3,7 @@ package cn.camio1945.asm2vhd4bochs;
 import cn.camio1945.asm2vhd4bochs.entity.VhdFooterField;
 import cn.hutool.core.convert.Convert;
 import cn.hutool.core.io.FileUtil;
+import cn.hutool.core.thread.ThreadUtil;
 import cn.hutool.core.util.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -39,10 +40,54 @@ class MainApplicationTest {
   }
 
   @Test
+  void mainTest() {
+    main(new String[]{});
+    assertTrue(isBochsProcessExist());
+    assertTrue(asmSourceCodeFilePath.contains("/NASM/HelloWorld.asm"));
+    assertTrue(binFilePath.contains("/OutputBin/HelloWorld.bin"));
+    assertTrue(vhdFilePath.contains("/OutputVhd/HelloWorld.vhd"));
+    killBochsProcess();
+  }
+
+  @Test
+  void needsHelpTest() {
+    String[] args = {"-h"};
+    assertTrue(needsHelp(args));
+    args[0] = "--help";
+    assertTrue(needsHelp(args));
+    args[0] = "-help";
+    assertTrue(needsHelp(args));
+    args[0] = "help";
+    assertTrue(needsHelp(args));
+  }
+
+  @Test
+  void printHelpTest() {
+    String msg = printHelp();
+    assertTrue(msg.contains("Usage:"));
+    assertTrue(msg.contains("Example:"));
+    assertTrue(msg.contains("Options:"));
+  }
+
+  @Test
   void generateBochsConfigurationFileTest() {
     initEnvironment();
     generateBochsConfigurationFile();
     assertTrue(FileUtil.exist(bochsConfigFilePath));
+  }
+
+  @Test
+  void runOrDebugBochsTest() {
+    initEnvironment();
+    runOrDebugBochs();
+    int maxTryTimes = 10;
+    int triedTimes = 0;
+    while (triedTimes < maxTryTimes && !isBochsProcessExist()) {
+      triedTimes++;
+      ThreadUtil.sleep(1000);
+    }
+    assertTrue(isBochsProcessExist());
+    killBochsProcess();
   }
 
   @Test
@@ -182,6 +227,16 @@ class MainApplicationTest {
     args[0] = format("{}={}", key, value);
     initArgsMap(args);
     assertThrows(IllegalArgumentException.class, () -> initRunOrDebug());
+  }
+
+  @Test
+  void fillDataBytesTest() {
+    assertThrows(IllegalArgumentException.class, () -> fillDataBytes(null));
+    List<Byte> dataBytes = new ArrayList<>();
+    fillDataBytes(dataBytes);
+    assertEquals((byte) 0x55, dataBytes.get(bytesPerSector - 2));
+    assertEquals((byte) 0xAA, dataBytes.get(bytesPerSector - 1));
+    assertEquals(vhdFileSize - bytesPerSector, dataBytes.size());
   }
 
   @Test
