@@ -2,6 +2,7 @@ package cn.camio1945.asm2vhd4bochs;
 
 import cn.camio1945.asm2vhd4bochs.constant.VhdFooterFieldConstant;
 import cn.camio1945.asm2vhd4bochs.entity.VhdFooterField;
+import cn.hutool.core.compiler.CompilerException;
 import cn.hutool.core.convert.Convert;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.lang.Assert;
@@ -22,9 +23,9 @@ import static cn.hutool.core.text.CharSequenceUtil.format;
 import static cn.hutool.core.text.CharSequenceUtil.isBlank;
 
 /**
- * 项目入口
+ * 项目入口。大部分的字段和方法的修饰符都是 protected，是为了方便做单元测试。
  * <p>
- * Project entry
+ * Project entry. Most of the modifiers of fields and methods are protected for easy unit testing.
  * <p>
  * @author Camio1945
  */
@@ -143,14 +144,12 @@ public class MainApplication {
    */
   protected static Map<String, String> argsMap = new HashMap<>();
 
-  /**
-   * 单元测试说明：由于需要打开其他的窗口程序，不方便做单元测试，需要人为验证 main 方法的正确性。
-   * <p>
-   * Unit test description: Since it is necessary to open other window programs, it is not convenient to do unit testing, and it is necessary to manually verify the correctness of the main method.
-   * @param args
-   */
   public static void main(String[] args) {
     try {
+      if (needsHelp(args)) {
+        printHelp();
+        return;
+      }
       initStaticFields(args);
       asm2bin();
       killBochsProcess();
@@ -163,6 +162,37 @@ public class MainApplication {
     }
   }
 
+  protected static String printHelp() {
+    String msg = """
+        Usage: asm2vhd4bochs.exe [options]
+
+        Example: asm2vhd4bochs.exe asmSourceCodeFilePath="{}/NASM/HelloWorld.asm" runOrDebug=debug
+
+        Options:
+          -h, --help, -help, help  Print this help message and exit
+
+          asmSourceCodeFilePath="<your asm source file absolute path>"
+              note: if the path contains spaces, please use double quotes
+              the default value is: {}/NASM/HelloWorld.asm
+
+          runOrDebug=<your run mode>
+              the options are: run, debug
+              the default value is: run
+
+      """;
+    log.info("\n\n" + msg, currentFolderPath, currentFolderPath);
+    return msg;
+  }
+
+  protected static boolean needsHelp(String[] args) {
+    initCurrentFolderPath();
+    if (args.length != 1) {
+      return false;
+    }
+    String arg = args[0];
+    return arg.equals("-h") || arg.equals("--help") || arg.equals("-help") || arg.equals("help");
+  }
+
   protected static void generateBochsConfigurationFile() {
     String template = FileUtil.readUtf8Lines(bochsrcTemplateFilePath)
                               .stream()
@@ -173,12 +203,7 @@ public class MainApplication {
     FileUtil.writeUtf8String(configuration, bochsConfigFilePath);
   }
 
-  /**
-   * 单元测试说明：由于需要打开其他的窗口程序，不方便做单元测试，需要人为验证 main 方法的正确性。
-   * <p>
-   * Unit test description: Since it is necessary to open other window programs, it is not convenient to do unit testing, and it is necessary to manually verify the correctness of the main method.
-   */
-  private static void runOrDebugBochs() {
+  protected static void runOrDebugBochs() {
     String bochsExeFilePath = isRun ? bochsRunExeFilePath : bochsDebugExeFilePath;
     RuntimeUtil.exec("cmd", "/c", "start",
       bochsExeFilePath, "-q", "-f", bochsConfigFilePath);
@@ -199,10 +224,10 @@ public class MainApplication {
   protected static boolean isBochsProcessExist() {
     return RuntimeUtil.execForLines("tasklist")
                       .stream()
-                      .filter(line -> line.contains("bochs"))
-                      .filter(line -> !line.contains("asm2vhd4bochs.exe"))
-                      .findAny()
-                      .isPresent();
+                      .anyMatch(
+                        line -> line.contains("bochs")
+                          && !line.contains("asm2vhd4bochs.exe")
+                      );
   }
 
   protected static void initStaticFields(String[] args) {
@@ -233,7 +258,7 @@ public class MainApplication {
     if (FileUtil.exist(binFilePath)) {
       log.info("compile asm source code to bin file successfully : " + binFilePath);
     } else {
-      throw new RuntimeException("compile asm source code to bin file failed : " + res);
+      throw new CompilerException("compile asm source code to bin file failed : " + res);
     }
   }
 
@@ -329,7 +354,15 @@ public class MainApplication {
     isRun = RUN.equals(runOrDebug);
   }
 
-  private static void fillDataBytes(List<Byte> byteList) {
+  /**
+   * 比如说最终的 vhd 文件的总大小是64kb，头部占了 512 字节，尾部还要占 512 字节，中间的部分都要用 0 来填充。
+   * <p>
+   * For example, the total size of the final vhd file is 64kb,
+   * the header occupies 512 bytes, the footer also occupies 512 bytes,
+   * and the middle part is filled with 0.
+   * @param byteList
+   */
+  protected static void fillDataBytes(@NotNull List<Byte> byteList) {
     if (byteList.size() == bytesPerSector) {
       Assert.isTrue(byteList.get(bytesPerSector - 2) == (byte) 0x55);
       Assert.isTrue(byteList.get(bytesPerSector - 1) == (byte) 0xAA);
@@ -340,8 +373,8 @@ public class MainApplication {
       byteList.add((byte) 0x55);
       byteList.add((byte) 0xAA);
     }
-    // 比如说最终的 vhd 文件的总大小是64kb，头部占了 512 字节，尾部还要占 512 字节，中间的部分都要用 0 来填充
-    // 2 * bytesPerSector 是因为 footer 也是一个扇区，加上起始扇区，一共是 2 个扇区
+    // 2 * bytesPerSector 是因为 footer 也是一个扇区，加上起始扇区，一共是 2 个扇区。
+    // 2 * bytesPerSector is because the footer is also a sector, plus the starting sector, a total of 2 sectors.
     byteList.addAll(Collections.nCopies(vhdFileSize - (2 * bytesPerSector), (byte) 0));
   }
 
