@@ -17,7 +17,7 @@ Convert an asm file into a vhd file, and then open the vhd file with Bochs.
 3. 在 cmd 窗口进入到解压缩的文件夹
 4. 运行Bochs命令示例： asm2vhd4bochs.exe -f="<你的asm源文件绝对路径>" -r
 
-   调试运行Bochs命令示例：asm2vhd4bochs.exe -f="<你的asm源文件绝对路径>" -d
+   调试Bochs命令示例：asm2vhd4bochs.exe -f="<你的asm源文件绝对路径>" -d
 
    如果你什么参数都不传，直接运行 asm2vhd4bochs.exe ，则默认会以运行模式打开 NASM 文件夹下的 HelloWorld.asm
 
@@ -28,7 +28,7 @@ Convert an asm file into a vhd file, and then open the vhd file with Bochs.
 3. Enter the unzipped folder in the cmd window
 4. Run Bochs command example: asm2vhd4bochs.exe -f="<absolute path of your asm source file>" -r
 
-   Debug run Bochs command example: asm2vhd4bochs.exe -f="<absolute path of your asm source file>" -d
+   Debug Bochs command example: asm2vhd4bochs.exe -f="<absolute path of your asm source file>" -d
 
    If you don't pass any parameters and run asm2vhd4bochs.exe directly, it will open HelloWorld.asm under the NASM folder by default.
 
