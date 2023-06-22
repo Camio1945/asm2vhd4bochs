@@ -131,3 +131,10 @@ Solution: Close the bochs process.
 Reason: There is an error in the assembly source code.
 
 Solution: Modify the assembly source code.
+
+
+***
+
+# TODO List
+
+1. 简化参数

@@ -6,7 +6,7 @@
 
   <groupId>com.camio1945</groupId>
   <artifactId>asm2vhd4bochs</artifactId>
-  <version>0.3-SNAPSHOT</version>
+  <version>0.4-SNAPSHOT</version>
 
   <properties>
     <maven.compiler.source>17</maven.compiler.source>
@@ -38,6 +38,12 @@
       <artifactId>junit-jupiter-api</artifactId>
       <version>5.10.0-M1</version>
       <scope>test</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/info.picocli/picocli -->
+    <dependency>
+      <groupId>info.picocli</groupId>
+      <artifactId>picocli</artifactId>
+      <version>4.7.4</version>
     </dependency>
 
   </dependencies>

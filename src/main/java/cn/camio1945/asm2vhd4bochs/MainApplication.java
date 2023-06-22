@@ -10,12 +10,12 @@ import cn.hutool.core.thread.ThreadUtil;
 import cn.hutool.core.util.*;
 import cn.hutool.log.Log;
 import org.jetbrains.annotations.NotNull;
+import picocli.CommandLine;
 
 import java.nio.ByteOrder;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static cn.camio1945.asm2vhd4bochs.constant.ArgsKeysConstant.*;
 import static cn.camio1945.asm2vhd4bochs.constant.VhdFooterFieldConstant.ZERO_BASED_ORDER_TO_SIZE_MAP;
 import static cn.camio1945.asm2vhd4bochs.constant.VhdFooterFieldConstant.ZeroBasedOrder.*;
 import static cn.camio1945.util.StaticMethodUtil.*;
@@ -138,19 +138,20 @@ public class MainApplication {
   protected static boolean isRun;
 
   /**
-   * 命令行参数 map
+   * 命令行参数
    * <p>
-   * Command line parameters map
+   * Command line arguments
    */
-  protected static Map<String, String> argsMap = new HashMap<>();
+  protected static Arguments arguments = new Arguments();
 
   public static void main(String[] args) {
     try {
-      if (needsHelp(args)) {
+      initArguments(args);
+      if (arguments.help) {
         printHelp();
         return;
       }
-      initStaticFields(args);
+      initStaticFields();
       asm2bin();
       killBochsProcess();
       bin2vhd();
@@ -162,35 +163,31 @@ public class MainApplication {
     }
   }
 
+  protected static void initArguments(String[] args) {
+    new CommandLine(arguments).parseArgs(args);
+  }
+
   protected static String printHelp() {
     String msg = """
         Usage: asm2vhd4bochs.exe [options]
 
-        Example: asm2vhd4bochs.exe asmSourceCodeFilePath="{}/NASM/HelloWorld.asm" runOrDebug=debug
+        Example: asm2vhd4bochs.exe -f="{}/NASM/HelloWorld.asm" -d
 
         Options:
-          -h, --help, -help, help  Print this help message and exit
+          -h, --help  Print this help message and exit
 
-          asmSourceCodeFilePath="<your asm source file absolute path>"
+          -f="<your asm source file absolute path>"
               note: if the path contains spaces, please use double quotes
               the default value is: {}/NASM/HelloWorld.asm
+          -r
+              run the Bochs (instead of debug)
 
-          runOrDebug=<your run mode>
-              the options are: run, debug
-              the default value is: run
+          -d
+              debug the Bochs (instead of run)
 
       """;
     log.info("\n\n" + msg, currentFolderPath, currentFolderPath);
     return msg;
-  }
-
-  protected static boolean needsHelp(String[] args) {
-    initCurrentFolderPath();
-    if (args.length != 1) {
-      return false;
-    }
-    String arg = args[0];
-    return arg.equals("-h") || arg.equals("--help") || arg.equals("-help") || arg.equals("help");
   }
 
   protected static void generateBochsConfigurationFile() {
@@ -230,12 +227,11 @@ public class MainApplication {
                       );
   }
 
-  protected static void initStaticFields(String[] args) {
+  protected static void initStaticFields() {
     log.info("Initializing static fields...");
     initCurrentFolderPath();
-    initArgsMap(args);
     initAsmSourceCodeFilePath();
-    initRunOrDebug();
+    initIsRun();
     initPaths();
   }
 
@@ -276,7 +272,8 @@ public class MainApplication {
     log.info("generating vhd file...");
     FileUtil.del(vhdFilePath);
     byte[] binFileBytes = FileUtil.readBytes(binFilePath);
-    Assert.isTrue(binFileBytes.length <= bytesPerSector);
+    Assert.isTrue(binFileBytes.length <= bytesPerSector,
+      "bin file size must be less than or equal to " + bytesPerSector + ", but actual is " + binFileBytes.length);
     List<Byte> byteList = Convert.convert(List.class, binFileBytes);
     fillDataBytes(byteList);
     byte[] footerBytes = generateVhdFooter();
@@ -318,40 +315,23 @@ public class MainApplication {
     currentFolderPath = getCurrentExecutingProjectFolderPath();
   }
 
-  protected static void initArgsMap(String[] args) {
-    for (String arg : args) {
-      String[] split = arg.split("=");
-      if (split.length == 2) {
-        String key = split[0];
-        if (ARGS_KEYS.contains(key)) {
-          argsMap.put(key, split[1]);
-        } else {
-          log.warn("Unknown key: " + key);
-        }
-      }
-    }
-  }
-
   protected static void initAsmSourceCodeFilePath() {
-    asmSourceCodeFilePath = argsMap.get(ASM_SOURCE_CODE_FILE_PATH);
+    asmSourceCodeFilePath = arguments.asmSourceCodeFilePath;
     if (isBlank(asmSourceCodeFilePath)) {
       asmSourceCodeFilePath = currentFolderPath + "/NASM/HelloWorld.asm";
-      log.info("Command line argument " + ASM_SOURCE_CODE_FILE_PATH + " is not specified, " +
+      log.info("Command line argument -f is not specified, " +
         "using default asm source code file path: " + asmSourceCodeFilePath);
     }
-    Assert.isTrue(FileUtil.exist(asmSourceCodeFilePath), "{} does not exist : {}", ASM_SOURCE_CODE_FILE_PATH, asmSourceCodeFilePath);
+    Assert.isTrue(FileUtil.exist(asmSourceCodeFilePath), "file does not exist : {}", asmSourceCodeFilePath);
   }
 
-  protected static void initRunOrDebug() {
-    String runOrDebug = argsMap.get(RUN_OR_DEBUG);
-    if (isBlank(runOrDebug)) {
-      runOrDebug = RUN;
-      log.info("Command line argument " + RUN_OR_DEBUG + " is not specified, " +
-        "using default value: " + runOrDebug);
-    } else {
-      Assert.isTrue(RUN_OR_DEBUG_VALUES.contains(runOrDebug), "{} is not in {}", runOrDebug, RUN_OR_DEBUG_VALUES);
+  protected static void initIsRun() {
+    Assert.isFalse(arguments.run && arguments.debug, "can not specify both -r and -d");
+    if (!arguments.run && !arguments.debug) {
+      log.info("Command line argument -r or -d is not specified, using default value : -r");
+      arguments.run = true;
     }
-    isRun = RUN.equals(runOrDebug);
+    isRun = arguments.run;
   }
 
   /**

@@ -7,24 +7,28 @@ import cn.hutool.core.thread.ThreadUtil;
 import cn.hutool.core.util.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import picocli.CommandLine;
 
 import java.nio.ByteOrder;
 import java.util.*;
+import java.util.stream.Collectors;
 
 import static cn.camio1945.asm2vhd4bochs.MainApplication.*;
-import static cn.camio1945.asm2vhd4bochs.constant.ArgsKeysConstant.ASM_SOURCE_CODE_FILE_PATH;
-import static cn.camio1945.asm2vhd4bochs.constant.ArgsKeysConstant.RUN_OR_DEBUG;
 import static cn.camio1945.asm2vhd4bochs.constant.VhdFooterFieldConstant.ZERO_BASED_ORDER_TO_SIZE_MAP;
 import static cn.camio1945.asm2vhd4bochs.constant.VhdFooterFieldConstant.ZeroBasedOrder.*;
 import static cn.camio1945.util.StaticMethodUtil.fileSize2ByteListSized8;
 import static cn.camio1945.util.StaticMethodUtil.getCurrentExecutingProjectFolderPath;
 import static cn.hutool.core.text.CharSequenceUtil.format;
+import static cn.hutool.core.text.CharSequenceUtil.isNotBlank;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MainApplicationTest {
   @BeforeEach
   void setUp() {
-    argsMap.clear();
+    arguments.run = false;
+    arguments.debug = false;
+    arguments.help = false;
+    arguments.asmSourceCodeFilePath = null;
     asmSourceCodeFilePath = null;
     isRun = false;
     currentFolderPath = null;
@@ -50,15 +54,18 @@ class MainApplicationTest {
   }
 
   @Test
-  void needsHelpTest() {
-    String[] args = {"-h"};
-    assertTrue(needsHelp(args));
-    args[0] = "--help";
-    assertTrue(needsHelp(args));
-    args[0] = "-help";
-    assertTrue(needsHelp(args));
-    args[0] = "help";
-    assertTrue(needsHelp(args));
+  void initArgumentsTest() {
+    initArguments(new String[]{});
+    assertFalse(arguments.run);
+    assertFalse(arguments.debug);
+    assertFalse(arguments.help);
+    assertNull(arguments.asmSourceCodeFilePath);
+
+    initArguments(new String[]{"-h", "-r", "-d", "-f=D:/temp.asm"});
+    assertTrue(arguments.run);
+    assertTrue(arguments.debug);
+    assertTrue(arguments.help);
+    assertEquals("D:/temp.asm", arguments.asmSourceCodeFilePath);
   }
 
   @Test
@@ -74,6 +81,13 @@ class MainApplicationTest {
     initEnvironment();
     generateBochsConfigurationFile();
     assertTrue(FileUtil.exist(bochsConfigFilePath));
+    String content = FileUtil.readUtf8Lines(bochsConfigFilePath)
+                             .stream()
+                             .collect(Collectors.joining("\n"));
+    String folderPath = currentFolderPath.replace("/", "\\");
+    String windowsVhdFilePath = vhdFilePath.replace("/", "\\");
+    assertTrue(content.contains(folderPath));
+    assertTrue(content.contains(windowsVhdFilePath));
   }
 
   @Test
@@ -115,8 +129,9 @@ class MainApplicationTest {
    */
   @Test
   void initStaticFieldsTest() {
-    initStaticFields(new String[]{});
-    assertTrue(argsMap.isEmpty());
+    initEnvironment();
+    initStaticFields();
+    assertTrue(isNotBlank(vhdLockFilePath));
   }
 
   @Test
@@ -172,39 +187,24 @@ class MainApplicationTest {
   }
 
   @Test
-  void initArgsMapTest() {
-    String key1 = ASM_SOURCE_CODE_FILE_PATH;
-    String value1 = "E:/test.asm";
-    String key2 = RUN_OR_DEBUG;
-    String value2 = "run";
-    String[] args = {
-      format("{}={}", key1, value1),
-      format("{}={}", key2, value2)
-    };
-    initArgsMap(args);
-    assertEquals(value1, argsMap.get(key1));
-    assertEquals(value2, argsMap.get(key2));
-  }
-
-  @Test
   void initAsmSourceCodeFilePathTest() {
     // 1. 当参数值为空时，抛出异常
     // 1. When the parameter value is empty, an exception is thrown.
-    String key = ASM_SOURCE_CODE_FILE_PATH;
     String value = "";
     String[] args = {
-      format("{}={}", key, value),
+      format("-f={}", value),
+      "-d"
     };
     initCurrentFolderPath();
-    initArgsMap(args);
+    initArguments(args);
     initAsmSourceCodeFilePath();
     assertTrue(asmSourceCodeFilePath.contains("/NASM/HelloWorld.asm"));
 
     // 2. 当路径不存在时，抛出异常
     // 2. When the path does not exist, an exception is thrown.
     value = "E:/" + IdUtil.simpleUUID() + ".asm";
-    args[0] = format("{}={}", key, value);
-    initArgsMap(args);
+    args[0] = format("-f={}", value);
+    initArguments(args);
     assertThrows(IllegalArgumentException.class, () -> initAsmSourceCodeFilePath());
   }
 
@@ -212,21 +212,15 @@ class MainApplicationTest {
   void initRunOrDebugTest() {
     // 1. 当参数值为空时，系统给出的默认值为 run
     // 1. When the parameter value is empty, the default value given by the system is run.
-    String key = RUN_OR_DEBUG;
-    String value = "";
-    String[] args = {
-      format("{}={}", key, value),
-    };
-    initArgsMap(args);
-    initRunOrDebug();
+    initCurrentFolderPath();
+    String[] args = {};
+    initArguments(args);
+    initIsRun();
     assertTrue(isRun);
 
     // 2. 当参数值不在字典中时，抛出异常
     // 2. When the parameter value is not in the dictionary, an exception is thrown.
-    value = "hello";
-    args[0] = format("{}={}", key, value);
-    initArgsMap(args);
-    assertThrows(IllegalArgumentException.class, () -> initRunOrDebug());
+    assertThrows(CommandLine.UnmatchedArgumentException.class, () -> initArguments(new String[]{"-n"}));
   }
 
   @Test
@@ -479,13 +473,12 @@ class MainApplicationTest {
   private void initEnvironment() {
     currentFolderPath = getCurrentExecutingProjectFolderPath();
     String[] args = {
-      format("{}={}", ASM_SOURCE_CODE_FILE_PATH,
-        currentFolderPath + "/NASM/OnePlusOneIsTwo.asm"),
-      format("{}={}", RUN_OR_DEBUG, "run")
+      format("-f={}", currentFolderPath + "/NASM/OnePlusOneIsTwo.asm"),
+      format("-d")
     };
-    initArgsMap(args);
+    initArguments(args);
     initAsmSourceCodeFilePath();
-    initRunOrDebug();
+    initIsRun();
     initPaths();
   }
 }
