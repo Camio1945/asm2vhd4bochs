@@ -9,11 +9,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c090ec0b-12b0-4167-92a0-0fa5807ac82d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Bochs/bochsrc.bxrc" beforeDir="false" afterPath="$PROJECT_DIR$/Bochs/bochsrc.bxrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bochs/bochsrcTemplate.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Bochs/bochsrcTemplate.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/Arguments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/Arguments.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/MainApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/cn/camio1945/asm2vhd4bochs/MainApplicationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/camio1945/asm2vhd4bochs/MainApplicationTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -286,7 +285,7 @@
       <workItem from="1686579816105" duration="117087000" />
       <workItem from="1687226334473" duration="15710000" />
       <workItem from="1687346905111" duration="1883000" />
-      <workItem from="1687387306774" duration="13269000" />
+      <workItem from="1687387306774" duration="16595000" />
     </task>
     <servers />
   </component>
@@ -339,7 +338,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/MainApplication.java</url>
-          <line>296</line>
+          <line>299</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>

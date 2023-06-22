@@ -73,6 +73,7 @@
 _ReSharper*
 _UpgradeReport_Files/
 Backup*/
+bx_enh_dbg.ini
 blade-ops
 bin
 ClientBin

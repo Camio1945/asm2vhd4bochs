@@ -164,10 +164,14 @@ public class MainApplication {
   }
 
   protected static void initArguments(String[] args) {
+    if (args == null || args.length == 0) {
+      return;
+    }
     new CommandLine(arguments).parseArgs(args);
   }
 
   protected static String printHelp() {
+    initCurrentFolderPath();
     String msg = """
         Usage: asm2vhd4bochs.exe [options]
 
