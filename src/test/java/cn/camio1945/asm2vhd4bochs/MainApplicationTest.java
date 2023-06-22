@@ -86,6 +86,7 @@ class MainApplicationTest {
                              .collect(Collectors.joining("\n"));
     String folderPath = currentFolderPath.replace("/", "\\");
     String windowsVhdFilePath = vhdFilePath.replace("/", "\\");
+    assertTrue(content.contains("display_library: win32"));
     assertTrue(content.contains(folderPath));
     assertTrue(content.contains(windowsVhdFilePath));
   }

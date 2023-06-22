@@ -9,11 +9,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c090ec0b-12b0-4167-92a0-0fa5807ac82d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/Arguments.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bochs/bochsrc.bxrc" beforeDir="false" afterPath="$PROJECT_DIR$/Bochs/bochsrc.bxrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bochs/bochsrcTemplate.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Bochs/bochsrcTemplate.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/MainApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/constant/ArgsKeysConstant.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/cn/camio1945/asm2vhd4bochs/MainApplicationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/camio1945/asm2vhd4bochs/MainApplicationTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -122,7 +121,7 @@
       <recent name="cn.camio1945.asm2vhd4bochs" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in asm2vhd4bochs">
+  <component name="RunManager" selected="Application.MainApplication">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -134,11 +133,9 @@
       <Port>5050</Port>
     </configuration>
     <configuration name="MainApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <envs>
-        <env name="--add-opens" value="java.base/java.util=ALL-UNNAMED " />
-      </envs>
       <option name="MAIN_CLASS_NAME" value="cn.camio1945.asm2vhd4bochs.MainApplication" />
       <module name="asm2vhd4bochs" />
+      <option name="PROGRAM_PARAMETERS" value="-d" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="cn.camio1945.asm2vhd4bochs.*" />
@@ -158,6 +155,8 @@
     <configuration name="All in asm2vhd4bochs" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="asm2vhd4bochs" />
       <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
@@ -267,11 +266,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MainApplication" />
         <item itemvalue="JUnit.All in asm2vhd4bochs" />
+        <item itemvalue="JUnit.MainApplicationTest.generateBochsConfigurationFileTest" />
         <item itemvalue="JUnit.MainApplicationTest.initRunOrDebugTest" />
         <item itemvalue="JUnit.MainApplicationTest.initArgumentsTest" />
-        <item itemvalue="Application.MainApplication" />
-        <item itemvalue="JUnit.MainApplicationTest.generateBochsConfigurationFileTest" />
       </list>
     </recent_temporary>
   </component>
@@ -287,7 +286,7 @@
       <workItem from="1686579816105" duration="117087000" />
       <workItem from="1687226334473" duration="15710000" />
       <workItem from="1687346905111" duration="1883000" />
-      <workItem from="1687387306774" duration="11621000" />
+      <workItem from="1687387306774" duration="13269000" />
     </task>
     <servers />
   </component>
@@ -335,12 +334,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/cn/camio1945/asm2vhd4bochs/MainApplicationTest.java</url>
-          <line>465</line>
+          <line>466</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/cn/camio1945/asm2vhd4bochs/MainApplication.java</url>
-          <line>292</line>
+          <line>296</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>

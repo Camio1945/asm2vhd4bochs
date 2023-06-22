@@ -191,16 +191,19 @@ public class MainApplication {
   }
 
   protected static void generateBochsConfigurationFile() {
+    log.info("generating bochs configuration file...");
     String template = FileUtil.readUtf8Lines(bochsrcTemplateFilePath)
                               .stream()
                               .collect(Collectors.joining("\n"));
+    String displayLibrary = isRun ? "win32" : "win32, options=\"gui_debug\"";
     String folderPath = currentFolderPath.replace("/", "\\");
     String windowsVhdFilePath = vhdFilePath.replace("/", "\\");
-    String configuration = format(template, folderPath, folderPath, windowsVhdFilePath);
+    String configuration = format(template, displayLibrary, folderPath, folderPath, windowsVhdFilePath);
     FileUtil.writeUtf8String(configuration, bochsConfigFilePath);
   }
 
   protected static void runOrDebugBochs() {
+    log.info(isRun ? "running bochs..." : "debugging bochs...");
     String bochsExeFilePath = isRun ? bochsRunExeFilePath : bochsDebugExeFilePath;
     RuntimeUtil.exec("cmd", "/c", "start",
       bochsExeFilePath, "-q", "-f", bochsConfigFilePath);
@@ -241,6 +244,7 @@ public class MainApplication {
    * use nasm.exe to compile asm source code to bin file
    */
   protected static void asm2bin() {
+    log.info("compiling asm source code to bin file...");
     FileUtil.del(binFilePath);
     String cmd = format("\"{}\" -f bin \"{}\" -o \"{}\"",
       nasmExeFilePath, asmSourceCodeFilePath, binFilePath);
